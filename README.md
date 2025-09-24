@@ -1,56 +1,53 @@
-# Algo_avance
+🌳 ABR - Arbre Binaire de Recherche
+C'est comme un arbre généalogique... mais pour les nombres !
 
-Arbre Rouge Noir(RN)
-Arbre rouge et noir
-Un arbre binaire de recherche est un arbre rouge et noir s’il satisfait les propri´et´es
-suivantes :
-1. Chaque noeud est soit rouge, soit noir.
-2. Chaque feuille (Nil) est noire.
-3. Si un noeud est rouge alors ses deux fils sont noirs.
-4. Tous les chemins descendants qui relie un noeud donne a une feuille (du sous-arbre
-dont il est la racine) contiennent le meme nombre de noeuds noirs.
+Imagine que tu ranges des livres sur une étagère :
 
+    À gauche : les livres avec un numéro plus petit
 
-📘 Algo_avancé
-🔴⚫ Arbre Rouge et Noir (Red-Black Tree)
+    À droite : les livres avec un numéro plus grand
 
-Un arbre rouge-noir est un arbre binaire de recherche équilibré qui garantit une hauteur logarithmique grâce à l’ajout d’une couleur (rouge ou noir) sur chaque nœud.
+    Au milieu : le livre de référence
 
-✅ Propriétés (rappel)
+🎯 Comment ça fonctionne ?
 
-Chaque nœud est soit rouge, soit noir.
+Prenons l'exemple avec des âges :
+text
 
-Chaque feuille (Nil) est noire.
+      25 ans
+      /    \
+    20      30
+   /  \    /  \
+  18  22  28   35
 
-Si un nœud est rouge, alors son père et ses deux fils doivent être noirs.
+Si je cherche 22 ans :
 
-Tous les chemins d’un nœud à une feuille contiennent le même nombre de nœuds noirs.
+    Je commence à 25 → 22 est plus petit ? Je vais à gauche
 
-🌳 Conséquences
+    J'arrive à 20 → 22 est plus grand ? Je vais à droite
 
-Empêche l’arbre de devenir trop déséquilibré.
+    Trouvé ! ✅
 
-La hauteur de l’arbre est O(log n).
+🛠️ À quoi ça sert ?
 
-Les opérations de recherche, insertion et suppression sont efficaces.
+Quand l'utiliser :
 
-⚙️ Opérations principales
-🔎 Recherche
+    Ranger une liste de contacts
 
-Identique à un arbre binaire de recherche classique (BST).
+    Trier des scores de jeu
 
-Complexité : O(log n).
+    Organiser des produits par prix
 
-➕ Insertion
+Les avantages :
 
-On insère le nœud comme dans un BST normal.
+    ✅ Recherche ultra-rapide
 
-Le nouveau nœud est toujours rouge.
+    ✅ Données toujours triées
 
-Si les propriétés de l’arbre sont violées (par exemple : deux nœuds rouges consécutifs), on applique une procédure de rééquilibrage :
+    ✅ Facile à comprendre
 
-Rotation gauche ou droite.
+Les inconvénients :
 
-Recoloration (changer rouge ↔ noir).
+    ❌ Peut devenir déséquilibré
 
-👉 Cette procédure est appelée Insertion Fix-Up.
+    ❌ Moins pratique pour les doublons
