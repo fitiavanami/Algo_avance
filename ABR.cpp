@@ -15,9 +15,9 @@ int main() {
 
     int racine = -1; // -1 signifie que l’arbre est vide
 
-    // ---------------------------
+    // --------------------------
     // 1) Construction de l’arbre
-    // ---------------------------
+    // --------------------------
     int nombres_a_inserer[] = {50, 30, 70, 20, 40, 60, 80};
     int taille = sizeof(nombres_a_inserer) / sizeof(nombres_a_inserer[0]);
 
@@ -67,9 +67,9 @@ int main() {
         }
     }
 
-    // ---------------------------
+    // --------------------------
     // 2) Recherche dans l’arbre
-    // ---------------------------
+    // --------------------------
     int valeurs_a_rechercher[] = {60, 25};
     int nb_recherches = sizeof(valeurs_a_rechercher) / sizeof(valeurs_a_rechercher[0]);
 
@@ -95,9 +95,9 @@ int main() {
             cout << cible << " est absent de l’arbre." << endl;
     }
 
-    // ---------------------------
+    // --------------------------
     // 3) Parcours infixe (in-order)
-    // ---------------------------
+    // --------------------------
     cout << "Parcours infixe (tri croissant) : ";
     stack<int> pile;
     int courant = racine;
@@ -113,9 +113,9 @@ int main() {
     }
     cout << endl;
 
-    // ---------------------------
+    // --------------------------
     // 4) Affichage de la structure interne
-    // ---------------------------
+    // --------------------------
     cout << "\nStructure interne de l’arbre (index : valeur, gauche, droite)" << endl;
     for (int i = 0; i < (int)valeurs.size(); i++) {
         cout << i << " : " << valeurs[i] 
