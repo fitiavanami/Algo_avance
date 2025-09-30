@@ -1,137 +1,87 @@
-🌳 ABR - Arbre Binaire de Recherche
-C'est comme un arbre généalogique... mais pour les nombres !
+# Arbre Binaire de Recherche (ABR / Binary Search Tree – BST)
 
-Imagine que tu ranges des livres sur une étagère :
+Un **Arbre Binaire de Recherche (ABR)** est une structure de données qui permet de **stocker, rechercher, insérer et supprimer** des éléments de manière rapide et organisée.  
+On peut le comparer à un **annuaire** ou une **bibliothèque triée**.
 
-    À gauche : les livres avec un numéro plus petit
+---
 
-    À droite : les livres avec un numéro plus grand
+## 📑 Sommaire
+1. [Définition](#-définition)  
+2. [Propriétés fondamentales](#-propriétés-fondamentales)  
+3. [Exemple simple](#-exemple-simple)  
+4. [Opérations principales](#-opérations-principales)  
+5. [Complexité](#-complexité)  
+6. [Avantages et Inconvénients](#-avantages-et-inconvénients)  
+7. [Variantes d’ABR](#-variantes-dabr)  
 
-    Au milieu : le livre de référence
+---
 
-🎯 Comment ça fonctionne ?
+## 📖 Définition
+Un **ABR** est un arbre binaire où :  
+- Les valeurs dans le **sous-arbre gauche** sont **plus petites** que la valeur du nœud.  
+- Les valeurs dans le **sous-arbre droit** sont **plus grandes** que la valeur du nœud.  
+- Cette règle s’applique **à chaque nœud** de l’arbre.  
 
-Prenons l'exemple avec des âges :
-text
+---
 
-      25 ans
-      /    \
-    20      30
-   /  \    /  \
-  18  22  28   35
+## ⚙️ Propriétés fondamentales
+- **Racine (Root)** : le premier nœud de l’arbre.  
+- **Sous-arbre gauche** : contient uniquement des valeurs **inférieures**.  
+- **Sous-arbre droit** : contient uniquement des valeurs **supérieures**.  
 
-Si je cherche 22 ans :
+---
 
-    Je commence à 25 → 22 est plus petit ? Je vais à gauche
+## 🔎 Exemple simple
+Insertion des valeurs : **50, 30, 70, 20, 40, 60, 80**
 
-    J'arrive à 20 → 22 est plus grand ? Je vais à droite
-
-    Trouvé ! ✅
-
-🛠️ À quoi ça sert ?
-
-Quand l'utiliser :
-
-    Ranger une liste de contacts
-
-    Trier des scores de jeu
-
-    Organiser des produits par prix
-
-Les avantages :
-
-    ✅ Recherche ultra-rapide
-
-    ✅ Données toujours triées
-
-    ✅ Facile à comprendre
-
-Les inconvénients :
-
-    ❌ Peut devenir déséquilibré
-
-    ❌ Moins pratique pour les doublons
-
-
-
-🌳 Qu’est-ce qu’un Arbre Binaire de Recherche (Binary Search Tree – BST) ?
-
-Un arbre binaire de recherche est un type d’arbre binaire utilisé pour stocker des données de manière organisée, afin de faciliter la recherche (chercher), l’insertion (insérer) et la suppression (supprimer) rapidement.
-
-⚙️ Propriétés fondamentales d’un Arbre Binaire de Recherche
-
-Un BST respecte 3 règles principales :
-
-Racine (Root) → le premier nœud de l’arbre.
-
-Sous-arbre gauche (Left Subtree) → toutes les valeurs du côté gauche sont plus petites que la valeur du nœud.
-
-Sous-arbre droit (Right Subtree) → toutes les valeurs du côté droit sont plus grandes que la valeur du nœud.
-
-➡️ Cette règle s’applique à chaque nœud de l’arbre, pas seulement à la racine.
-
-🔎 Exemple simple
-
-Supposons qu’on insère les valeurs suivantes dans un arbre binaire de recherche :
-
-50, 30, 70, 20, 40, 60, 80
-
-👉 L’arbre obtenu est :
-
+```
         50
        /  \
      30    70
     / \    / \
   20  40  60  80
+```
 
+---
 
-30 < 50 → va à gauche.
+## 🛠️ Opérations principales
 
-70 > 50 → va à droite.
+### 1. Insertion
+- On compare la valeur à insérer avec la racine.  
+- On descend à gauche ou à droite jusqu’à trouver la bonne position.  
 
-20 < 30 → va à gauche de 30.
+### 2. Recherche
+- On commence à la racine.  
+- Si la valeur est plus petite → aller à gauche.  
+- Si elle est plus grande → aller à droite.  
 
-40 > 30 → va à droite de 30.
+### 3. Suppression
+- **Cas 1 :** pas d’enfant → suppression directe.  
+- **Cas 2 :** 1 enfant → l’enfant remplace le nœud.  
+- **Cas 3 :** 2 enfants → remplacer par le **successeur** ou le **prédécesseur**.  
 
-60 < 70 → va à gauche de 70.
+---
 
-80 > 70 → va à droite de 70.
+## ⏱️ Complexité
+- Recherche / Insertion / Suppression : **O(h)** (h = hauteur de l’arbre).  
+- Si équilibré : **O(log n)**  
+- Si déséquilibré (ressemble à une liste) : **O(n)**  
 
-📌 Opérations principales sur un BST
+---
 
-Insertion (Ajouter une valeur)
+## ✅ Avantages et Inconvénients
+### Avantages :
+- Recherche et insertion rapides (si équilibré).  
+- Données toujours triées.  
+- Implémentation simple.  
 
-On place la nouvelle valeur à la position correcte (gauche si plus petite, droite si plus grande).
+### Inconvénients :
+- Peut devenir déséquilibré → perte d’efficacité.  
+- Moins pratique pour les doublons.  
 
-Recherche (Trouver une valeur)
+---
 
-On commence à la racine et on descend à gauche/droite selon la comparaison.
-
-Suppression (Enlever une valeur)
-
-Cas 1 : le nœud n’a pas d’enfant → on le supprime directement.
-
-Cas 2 : le nœud a 1 enfant → l’enfant prend la place du nœud.
-
-Cas 3 : le nœud a 2 enfants → on remplace par son successeur (ou son prédécesseur) et on ajuste l’arbre.
-
-⏱️ Complexité
-
-Recherche / Insertion / Suppression :
-
-Complexité = O(h) (h = hauteur de l’arbre).
-
-Si l’arbre est équilibré → O(log n).
-
-Si l’arbre est déséquilibré (ressemble à une liste) → O(n).
-
-✅ Avantages et Inconvénients
-Avantages :
-
-Recherche rapide (si équilibré).
-
-Facile à implémenter.
-
-Inconvénients :
-
-Peut devenir déséquilibré → moins efficace.
+## 🌲 Variantes d’ABR
+- **AVL Tree** → toujours équilibré, rotation automatique.  
+- **Red-Black Tree** → utilisé dans les bases de données et systèmes de fichiers.  
+- **Splay Tree** → amène les éléments souvent utilisés vers la racine.  
