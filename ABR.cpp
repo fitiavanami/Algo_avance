@@ -111,7 +111,7 @@ int main() {
             if (x < valeurs[courant]) {
                 // Descendre à gauche
                 if (fils_gauche[courant] == -1) {
-                    // Ajouter le nœud à gauche
+                    // Ajouter le nœud gauche
                     int n = valeurs.size();
                     valeurs.push_back(x);
                     fils_gauche.push_back(-1);
