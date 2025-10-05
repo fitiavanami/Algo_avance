@@ -81,7 +81,7 @@ Inconvénients :
 
 ---
 
-## 🌲 Variantes d’ABR
+ Variantes d’ABR
 - **AVL Tree** → toujours équilibré, rotation automatique.  
 - **Red-Black Tree** → utilisé dans les bases de données et systèmes de fichiers.  
 - **Splay Tree** → amène les éléments souvent utilisés vers la racine.  
