@@ -130,7 +130,7 @@ int main() {
                     fils_droit[courant] = n;
                     break;
                 } else courant = fils_droit[courant];
-            } else break; // Valeur déjà présente
+            } else break; // Valeur déjà présent
         }
     }
 
